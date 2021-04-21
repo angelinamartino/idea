@@ -1,10 +1,12 @@
 import logo from '../../images/logo.png'
+import './navbar.css'
+import '../cartWidget/cartWidget'
 
 export const Navbar = () => {
     return (
-        <header className="topBar">
+        <header className="navbar">
           <img src={logo} className='logo' alt='logo'></img>
-          <p className='logo'>HALU HANDMADE</p>
+          <p className='marca'>HALU HANDMADE</p>
           <nav className='navigation'>
             <ul className='links'>
               <li className='link'> 
@@ -20,6 +22,7 @@ export const Navbar = () => {
                 <a href=''>Novedades</a>
               </li>
             </ul>
+            <cartWidget/>
           </nav>
         </header>
     )

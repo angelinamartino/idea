@@ -1,0 +1,22 @@
+.logo{
+    width: 50px;
+  }
+  
+.navbar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: rgba(215, 214, 214, 0.678);
+  }
+
+.links {
+    display: flex;
+    list-style-type: none;
+  }
+  
+.link{
+    margin: 0 6px;
+  }
+  
