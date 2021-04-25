@@ -1,10 +1,10 @@
 import logo from '../../images/logo.png'
 import './navbar.css'
-//import '../cartWidget/cartWidget'
+
 
 export const Navbar = (props) => {
     const handleClick = () => {
-      alert (`Estas logeado ${props.user.name}`)
+      alert (`Hola ${props.user.name}`)
     }
 
     return (
@@ -36,7 +36,7 @@ export const Navbar = (props) => {
                   <label className='cart-quantity' >{props.cartQuantity}</label>
               </span>
               <img className='avatar' 
-                    src={props.user.avatar} 
+                    src='https://image.freepik.com/foto-gratis/mujer-alegre-feliz-brazos-cruzados-mirando_74855-3505.jpg'
                     alt='user' 
                     onClick={handleClick}/>
           </div>
@@ -44,3 +44,4 @@ export const Navbar = (props) => {
         </header>
     )
 }
+

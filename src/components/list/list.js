@@ -1,4 +1,4 @@
-import { Product } from '../product/product'
+/*import { Product } from '../product/product'
 
 export const List = (props) => {
     return props.products.map((product) => (
@@ -8,4 +8,4 @@ export const List = (props) => {
         descripcion={product.descripcion}
     />
    ))
-}
+}*/

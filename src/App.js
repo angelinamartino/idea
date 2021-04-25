@@ -1,13 +1,17 @@
 import './App.css';
 import {Navbar} from './components/navbar/navbar'
-import {List} from './components/list/list'
+import {useEffect, useState} from 'react'
 
 function App() {
-  const Products = [
+  const[filter, setfilter]=useState('')
+  const[navigation, setNavigation] = useState([
+      'Inicio', 'Productos', 'Contacto', 'Novedades',
+    ])
+  const [mochila,setProducts] = useState([
     {
-      titulo:'Sobre Phamn',
+      titulo:'Mochila Phamn',
       precio:'$4800',
-      descripcion:'Sobre de cuero con piedras',
+      descripcion:'Mochila de cuero con piedras',
     },
     {
       titulo:'Mochila Mila',
@@ -15,30 +19,52 @@ function App() {
       descripcion:'Mochila de cuero con bolsillo al frente',
     },
     {
-      titulo:'Sobre Dorothy',
-      precio:'$4300',
-      descripcion:'Sobre de cuero con volados',
+      titulo:'Mochila Tini',
+      precio:'$1500',
+      descripcion:'Mochila de cuero con apliques',
     },
     {
-      titulo:'Pulsera',
-      precio:'$1500',
-      descripcion:'Pulsera de cuero con apliques',
+      titulo:'Mochila Dorothy',
+      precio:'$4300',
+      descripcion:'Mochila de cuero con volados',
     },
-  ]
+  ])
 
   const USER = {
     name: 'Angelina Martino',
-    avatar: 'https://unsplash.com/photos/XR6o0Gb5kSU'
+    avatar: ''
   }
-
   const CART = 2
-  
+  const [filterMochilas, setFilterMochilas] = useState(mochila)
+
+  useEffect(
+    ()=> {
+      //filtra mochilas//
+      const newFilterMochilas=mochila.filter((mochila) => 
+        mochila.titulo.toLocaleLowerCase().includes(filter.toLocaleLowerCase()))
+        setFilterMochilas(newFilterMochilas)
+    }, [filter])
+
+  console.log('filter =>', filter)
   return (
-    <div className='App'>
-      <Navbar user={USER} cartQuantity={CART}/>
-      <List products={Products} />
-    </div>
-    
+    <main className='App'>
+      <Navbar user={USER} cartQuantity={CART} navigation={navigation}/>
+      <input 
+        type='text' 
+        placeholder='Buscar mochila' 
+        value={filter}
+        onChange={(e)=> setfilter(e.target.value)}
+      />
+      <div>
+        {filterMochilas.map((mochila)=> (
+            <div className= 'mochila' >
+              <p>{`${mochila.titulo} ${mochila.precio}`}</p>
+              <p>{mochila.descripcion}</p>
+            </div>
+        ))}
+        
+      </div>
+    </main>
   )
 }
 export default App
