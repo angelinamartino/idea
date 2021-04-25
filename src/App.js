@@ -26,12 +26,16 @@ function App() {
     },
   ]
 
+  const USER = {
+    name: 'Angelina Martino',
+    avatar: 'https://unsplash.com/photos/XR6o0Gb5kSU'
+  }
 
-
-
+  const CART = 2
+  
   return (
     <div className='App'>
-      <Navbar />
+      <Navbar user={USER} cartQuantity={CART}/>
       <List products={Products} />
     </div>
     
