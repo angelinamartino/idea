@@ -1,6 +1,7 @@
 import './App.css';
 import {Navbar} from './components/navbar/navbar'
 import {useEffect, useState} from 'react'
+import {ItemCount} from './components/itemCount/itemCount'
 
 function App() {
   const[filter, setfilter]=useState('')
@@ -49,6 +50,7 @@ function App() {
   return (
     <main className='App'>
       <Navbar user={USER} cartQuantity={CART} navigation={navigation}/>
+      <ItemCount/>
       <input 
         type='text' 
         placeholder='Buscar mochila' 
