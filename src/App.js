@@ -2,6 +2,7 @@ import './App.css';
 import {Navbar} from './components/navbar/navbar'
 import {useEffect, useState} from 'react'
 import {ItemCount} from './components/itemCount/itemCount'
+import {ItemListContainer} from './components/itemListContainer/itemListContainer'
 
 function App() {
   const[filter, setfilter]=useState('')
@@ -37,6 +38,7 @@ function App() {
   }
   const CART = 2
   const [filterMochilas, setFilterMochilas] = useState(mochila)
+  
 
   useEffect(
     ()=> {
@@ -57,15 +59,10 @@ function App() {
         value={filter}
         onChange={(e)=> setfilter(e.target.value)}
       />
-      <div>
-        {filterMochilas.map((mochila)=> (
-            <div className= 'mochila' >
-              <p>{`${mochila.titulo} ${mochila.precio}`}</p>
-              <p>{mochila.descripcion}</p>
-            </div>
-        ))}
-        
-      </div>
+      
+    
+      <ItemListContainer/>
+
     </main>
   )
 }
