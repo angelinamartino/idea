@@ -14,18 +14,21 @@ function ItemDetail(props) {
 
   return (
     <div>
-        <li>Precio: {props.price}</li>
-        <li>Condicion: {props.condition}</li>
-        <img src={props.thumbnail}></img>
-
+        <li>{props.item.categories}</li>
+        <li>Precio: {props.item.price.amount}</li>
+        <li>Condicion: {props.item.condition == "new" ? "Este producto es nuevo" : "usado" }</li>
+        <li>Precio: {props.item.price.amount}</li>
+        <li>Costo de envio: {props.item.free_shipping == true ? "Gatuito" : "A cargo del comprador" }</li>
+        <img src={props.item.thumbnail}></img>
+        <li>Detalle: {props.item.description}</li>
 
 
       <ItemCount
         func={giveMeCount}
-        nombre={props.nombre}
-        precio={props.precio}
+        nombre={props.item.title}
+        precio={props.item.price}
       />
-      <input onClick={()=>addProduct(props.nombre, count)} type="button" value={`Añadir al carrito ${count}`}/>
+      <input onClick={()=>addProduct(props.item.title, count)} type="button" value={`Añadir al carrito ${count}`}/>
     </div>
   );
 }

@@ -7,21 +7,24 @@ function ItemDetailContainer(props) {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch(`https://5f3c95f36c11f80016d6f21e.mockapi.io/bitbuyer/items/${id}`)
+      fetch(`https://challenge-meli-backend.herokuapp.com/api/items/${id}`)
         .then(response => {
           return response.json();
         })
         .then(data => {
-          setItem(data);
+          setItem(data.item);
         });
     }, 1000);
-    console.log(item);
   }, []); 
 
   return (
     <div>
       {item ? (
-        <ItemDetail nombre={item.nombre} precio={item.precio} id={item.id} />
+        <ItemDetail  
+
+          item={item}
+          
+          />
       ) : (
         <p>Trayendo información desde base de datos...</p>
       )}
