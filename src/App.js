@@ -1,69 +1,24 @@
-import './App.css';
-import {Navbar} from './components/navbar/navbar'
-import {useEffect, useState} from 'react'
-import {ItemCount} from './components/itemCount/itemCount'
-import {ItemListContainer} from './components/itemListContainer/itemListContainer'
+import React from "react";
+import Nav from "./components/navbar/navbar";
+import ItemListContainer from "./components/itemListContainer/itemListContainer";
+import ItemDetailContainer from "./components/itemDetailContainer/itemDetailContainer";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import CartContextProvider from "./components/Context/Context";
+import Cart from './components/cart/cart';
 
-function App() {
-  const[filter, setfilter]=useState('')
-  const[navigation, setNavigation] = useState([
-      'Inicio', 'Productos', 'Contacto', 'Novedades',
-    ])
-  const [mochila,setProducts] = useState([
-    {
-      titulo:'Mochila Phamn',
-      precio:'$4800',
-      descripcion:'Mochila de cuero con piedras',
-    },
-    {
-      titulo:'Mochila Mila',
-      precio:'$12500',
-      descripcion:'Mochila de cuero con bolsillo al frente',
-    },
-    {
-      titulo:'Mochila Tini',
-      precio:'$1500',
-      descripcion:'Mochila de cuero con apliques',
-    },
-    {
-      titulo:'Mochila Dorothy',
-      precio:'$4300',
-      descripcion:'Mochila de cuero con volados',
-    },
-  ])
-
-  const USER = {
-    name: 'Angelina Martino',
-    avatar: ''
-  }
-  const CART = 2
-  const [filterMochilas, setFilterMochilas] = useState(mochila)
-  
-
-  useEffect(
-    ()=> {
-      //filtra mochilas//
-      const newFilterMochilas=mochila.filter((mochila) => 
-        mochila.titulo.toLocaleLowerCase().includes(filter.toLocaleLowerCase()))
-        setFilterMochilas(newFilterMochilas)
-    }, [filter])
-
-  console.log('filter =>', filter)
+export default function App() {
   return (
-    <main className='App'>
-      <Navbar user={USER} cartQuantity={CART} navigation={navigation}/>
-      <ItemCount/>
-      <input 
-        type='text' 
-        placeholder='Buscar mochila' 
-        value={filter}
-        onChange={(e)=> setfilter(e.target.value)}
-      />
-      
-    
-      <ItemListContainer/>
-
-    </main>
-  )
+    <div>
+      <CartContextProvider>
+        <BrowserRouter>
+          <Nav />
+          <Switch>
+            <Route exact path="/" component={ItemListContainer} />
+            <Route path="/itemdetail/:id" component={ItemDetailContainer} />
+            <Route path="/cart" component={Cart} />
+          </Switch>
+        </BrowserRouter>
+      </CartContextProvider>
+    </div>
+  );
 }
-export default App

@@ -1,5 +1,27 @@
-
-.mochila {
-    margin: 10px;
-    border: 1px solid grey;
+h1,
+p {
+  font-family: Lato;
 }
+
+.nav {
+  background-color: bisque;
+  padding: 10px 10px 10px;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px;
+  font-weight: 700;
+}
+
+.ilc p {
+  text-align: center;
+  font-style: italic;
+}
+
+.item {
+  padding: 2vh 2vw 2vh 2vw;
+}
+
+/* .item :hover {
+  background-color: lightgrey;
+  padding: 2vh 2vw 2vh 2vw;
+} */

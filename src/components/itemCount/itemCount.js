@@ -1,30 +1,25 @@
-import React, {useState, useEffect} from 'react';
-import './itemCount.css';
+import React, { useState, useEffect } from "react";
 
-export const ItemCount = (props) => {
+export default function ItemCount(props) {
+  const [count, setCount] = useState(0);
 
-      const [count, setCount] = useState(0);
-    
-      function controlStock (cantidadSeleccionada) {
-        if(cantidadSeleccionada<1){
-            return 1
-        } 
-        if (cantidadSeleccionada>20){
-            return 20
-        }
-        return cantidadSeleccionada
+  useEffect(() => {
+    if (count < 0) {
+      setCount(0);
+    } else {
+      if (count > 10) {
+        setCount(10);
       }
+    }
+    props.func(count);
+  }, [count]);
 
-      return (
+  return (
     <div>
-     <p>Agregar al carrito {count} productos</p>
-     <button onClick={() => setCount(controlStock(count + 1))} >
-      +
-     </button> 
-     <button onClick={() => setCount(controlStock(count - 1))}>
-      -
-     </button>
 
-     </div>
-   );
+      <input type="button" value="+" onClick={() => setCount(count + 1)} />
+      {count}
+      <input type="button" value="-" onClick={() => setCount(count - 1)} />
+    </div>
+  );
 }
