@@ -17,7 +17,7 @@ function ItemList(props) {
   }, []);
 
   return (
-    <div>
+    <div className="itemList">
       {items ? (
         items.map((i, index) => (
          

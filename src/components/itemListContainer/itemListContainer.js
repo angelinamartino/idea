@@ -3,7 +3,7 @@ import ItemList from "../itemList/itemList";
 
 export default function ItemListContainer(props) {
   return (
-    <div className="ilc">
+    <div className="itemListCont">
       <p>
         Bienvenido {props.nombre} a nuestro e-shop!
       </p>

@@ -1,0 +1,31 @@
+.itemD{
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    padding: 12px;
+
+}
+
+.itemCategoria{
+    margin: 20px;
+}
+
+.itemPrecio{
+    margin: 20px;
+}
+
+.itemCondicion{
+    margin: 20px;
+}
+
+.itemEnvio{
+    margin: 20px;
+}
+
+.itemImagen{
+    margin: 20px;   
+}
+
+.itemDetalle{
+    margin: 20px;
+}
