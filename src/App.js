@@ -1,18 +1,24 @@
 import React from "react";
-import Nav from "./components/navbar/navbar";
+import './App.css';
 import ItemListContainer from "./components/itemListContainer/itemListContainer";
 import ItemDetailContainer from "./components/itemDetailContainer/itemDetailContainer";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import CartContextProvider from "./components/Context/Context";
 import Cart from './components/cart/cart';
+import { Layout } from './components/layout/layout'
 
-export default function App() {
+
+
+function App() {
   return (
-    <div>
+
+
+<div>
       <CartContextProvider>
         <BrowserRouter>
-          <Nav />
-          <Switch>
+          <Layout>
+          </Layout>
+        <Switch>
             <Route exact path="/" component={ItemListContainer} />
             <Route path="/itemdetail/:id" component={ItemDetailContainer} />
             <Route path="/cart" component={Cart} />
@@ -22,3 +28,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
