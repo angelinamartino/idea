@@ -8,8 +8,7 @@ function Cart() {
   useEffect(()=>{
     console.log(products)
   })
-  return <div>Bienvenidos al 
-  cart
+  return <div> Carrito de compras
           {products.map((product) => (
           <div>
           <hr></hr>

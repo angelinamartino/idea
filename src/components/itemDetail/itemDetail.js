@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
-
 import { CartContext } from "../Context/Context";
 import ItemCount from "../itemCount/itemCount";
 
 
 function ItemDetail(props) {
-  const [count, setCount] = useState(0);
-  const [products, productsCount, addProduct, delProduct, getGrandTotal] = useContext(CartContext);
+  const [count, setCount
+  ] = useState(0);
+  const [products, productsCount, addProduct, delProduct, getGrandTotal
+  ] = useContext(CartContext);
 
   function giveMeCount(c) {
     setCount(c);
