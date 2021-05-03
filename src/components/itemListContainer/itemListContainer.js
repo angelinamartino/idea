@@ -5,7 +5,7 @@ export default function ItemListContainer(props) {
   return (
     <div className="ilc">
       <p>
-        Bienvenido {props.nombre} a nuestra lista de productos recomendados para vos!
+        Bienvenido {props.nombre} a nuestro e-shop!
       </p>
       
       <ItemList />
