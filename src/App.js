@@ -5,8 +5,8 @@ import ItemDetailContainer from "./components/itemDetailContainer/itemDetailCont
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import CartContextProvider from "./components/Context/Context";
 import Cart from './components/cart/cart';
-import { Layout } from './components/layout/layout'
-
+import Layout from './components/layout/layout'
+import Footer from './components/footer/footer'
 
 
 function App() {
@@ -16,13 +16,13 @@ function App() {
 <div>
       <CartContextProvider>
         <BrowserRouter>
-          <Layout>
-          </Layout>
-        <Switch>
-            <Route exact path="/" component={ItemListContainer} />
-            <Route path="/itemdetail/:id" component={ItemDetailContainer} />
-            <Route path="/cart" component={Cart} />
-          </Switch>
+          <Layout/>
+            <Switch>
+              <Route exact path="/" component={ItemListContainer} />
+              <Route path="/itemdetail/:id" component={ItemDetailContainer} />
+              <Route path="/cart" component={Cart} />
+            </Switch>
+          <Footer/>
         </BrowserRouter>
       </CartContextProvider>
     </div>

@@ -1,9 +1,13 @@
 import '../footer/footer.css';
 
-export const footer = () => {
+const Footer = () => {
   return(
     <section>
-
+      <ul>
+        
+      </ul>
     </section>
   )
 }
+
+export default Footer;
