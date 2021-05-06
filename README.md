@@ -1,3 +1,21 @@
+El proyecto es de e-shop, en el cual se pueden visualizar productos, filtrarlos, visualizar detalles y agregarlos por unidad a un carrito de compras, hasta el momento .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

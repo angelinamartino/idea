@@ -2,10 +2,10 @@ import React,{useContext, useEffect, useState} from "react";
 import './navbar.css';
 import { Link } from "react-router-dom";
 import { CartContext } from "../Context/Context";
-import user from "../../components/User/user"
+
 
 function NavMenu() {
-  const [products, productsCount, addProduct, delProduct, getGrandTotal] = useContext(CartContext);
+  const [products, productsCount] = useContext(CartContext);
   
   return (
     <div className="navbar">
