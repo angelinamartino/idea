@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 //Creo contexto
 export const CartContext = React.createContext([]);
 
+
 //Creo la "clase" context con sus funciones y variables a compartir
 const CartContextProvider = props => {
   const [products, setProducts] = useState([]);
@@ -14,6 +15,9 @@ const CartContextProvider = props => {
     
     
   };
+
+  
+
 
   // Suma los productos (acc = acumulador) Recorre productos y suma quantity (cantidad)
   const productsCount = () => {

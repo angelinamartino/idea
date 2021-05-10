@@ -2,7 +2,7 @@ import './item.css'
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Item(props) {
+function Item(props, onAdd) {
   return (
     <div className="item">
       <div>
@@ -14,7 +14,9 @@ function Item(props) {
         <li>Condicion: {props.condition}</li>
         <img src={props.thumbnail}></img>
       </div>
-    </div>
+        <button onClick={onAdd}>
+          Agregar al carrito</button>
+      </div>
   );
 }
 

@@ -23,6 +23,7 @@ function ItemDetail(props) {
         <li className= "itemEnvio">Costo de envio: {props.item.free_shipping == true ? "Gatuito" : "A cargo del comprador" }</li>
         <img className= "itemImagen" src={props.item.thumbnail}></img>
         <li className= "itemDetalle">Detalle: {props.item.description}</li>
+
       </div>
       <div>
         <ItemCount
@@ -30,7 +31,7 @@ function ItemDetail(props) {
         nombre={props.item.title}
         precio={props.item.price}
         />
-        <input onClick={()=>addProduct(props.item.title, count)} type="button" value={`Añadir al carrito ${count}`}/>
+      
       </div>
     </div>
   );

@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import Item from "../item/item";
 
 function ItemList(props) {
+    const handleAdd = () => {
+    console.log('agregado correctamente')}
+  
   const [items, setItems] = useState(false);
+
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -28,11 +33,15 @@ function ItemList(props) {
             price={i.price.amount}
             condition={i.condition}
             thumbnail={i.thumbnail}
+            onAdd={handleAdd}
+  
           />
+               
         ))
         ):(
         <p>Buscando datos...</p>
       )}
+
     </div>
   );
 }
