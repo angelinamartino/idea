@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext, useEffect, useState } from "react";
 import { CartContext } from "../Context/Context";
 
 
@@ -11,10 +11,10 @@ function Cart() {
   return <div> Carrito de compras
           {products.map((product) => (
           <div>
-          <hr></hr>
+          <hr/>
             <p>Item:{product.title}</p>
             <p>Cantidad:{product.quantity}</p>
-            <hr></hr>
+            <hr/>
           </div>
         ))}
   </div>;

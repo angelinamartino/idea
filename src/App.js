@@ -7,7 +7,7 @@ import CartContextProvider from "./components/Context/Context";
 import Cart from './components/cart/cart';
 import Layout from './components/layout/layout'
 import Footer from './components/footer/footer'
-
+import Category from "./components/itemListCategory/category";
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
           <Layout/>
             <Switch>
               <Route exact path="/" component={ItemListContainer} />
+              <Route path="/category/:category" component={Category} />
               <Route path="/itemdetail/:id" component={ItemDetailContainer} />
               <Route path="/cart" component={Cart} />
             </Switch>

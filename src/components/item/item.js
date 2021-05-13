@@ -6,10 +6,8 @@ function Item(props, onAdd) {
   return (
     <div className="item">
       <div>
-        <Link to={{ pathname: `/itemdetail/${props.id}`, 
-                  state: { test: "test" } }}>
-          <h5>{props.title}</h5>
-        </Link>
+        <Link to={{ pathname: `/itemdetail/${props.id}`,state: { test: "test" } }}>
+          {props.title}</Link>
         <li>Precio: {props.price}</li>
         <li>Condicion: {props.condition}</li>
         <img src={props.thumbnail}></img>

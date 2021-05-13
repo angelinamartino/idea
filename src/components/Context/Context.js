@@ -12,11 +12,12 @@ const CartContextProvider = props => {
   function addProduct(product, quantity){
     // Busca en el array si existe. Si esta no lo trae
       setProducts([...products, {'nombre':product, 'quantity': quantity  }]);
-    
-    
   };
 
-  
+  // Vaciar carrito
+  function clearAll(product, quantity){
+    setProducts([]);
+  };
 
 
   // Suma los productos (acc = acumulador) Recorre productos y suma quantity (cantidad)
@@ -26,12 +27,10 @@ const CartContextProvider = props => {
 
   // Elimina producto del array. Busca el indice y elimina 1
   const delProduct = (id) => {
-    products.splice(
-      products.findIndex((p) => p.id === id),
-      1
-    );
+    products.splice(products.findIndex((p) => p.id === id), 1);
     setProducts([...products]);
   };
+
 
   // Importe total
   const getGrandTotal = () => {
@@ -40,7 +39,7 @@ const CartContextProvider = props => {
 
 
   return (
-    <CartContext.Provider value={[products, productsCount, addProduct, delProduct, getGrandTotal]}>
+    <CartContext.Provider value={[products, productsCount, clearAll, addProduct, delProduct, getGrandTotal]}>
       {props.children}
     </CartContext.Provider>
   );
